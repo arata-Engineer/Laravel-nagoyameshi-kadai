@@ -26,5 +26,8 @@ class DatabaseSeeder extends Seeder
          $user->address = "東京都";
          $user->phone_number = "000-0000-0000";
          $user->save();
+
+         // 100人のユーザーをシード
+        $this->call(UsersTableSeeder::class);
     }
 }
