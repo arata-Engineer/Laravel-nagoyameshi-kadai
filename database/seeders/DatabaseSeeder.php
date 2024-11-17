@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
  use Carbon\Carbon;
  use Illuminate\Support\Facades\Hash;
+ use Illuminate\Support\Facades\DB;
 
 
 class DatabaseSeeder extends Seeder
@@ -16,6 +17,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('users')->where('email', 'tarou@example.com')->delete();
+
         $user = new User();
          $user->name = "太郎";
          $user->kana = "タロウ";
